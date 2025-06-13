@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>ドクターリセラ公式ショップ Yahoo!店 総合分析レポート (2025年4月度)</title>
+    <title>ドクターリセラ公式ショップ Yahoo!店 総合分析レポート (2025年5月度)</title>
     <script src="https://cdn.tailwindcss.com"></script>
     <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&family=Noto+Sans+JP:wght@400;500;700&display=swap" rel="stylesheet">
@@ -15,15 +15,20 @@
         .chart-container {
             position: relative;
             width: 100%;
-            max-width: 600px;
+            max-width: 700px; /* Increased max-width for better chart readability */
             margin-left: auto;
             margin-right: auto;
-            height: 300px; 
+            height: 400px; 
         }
         @media (min-width: 768px) { 
             .chart-container {
-                height: 350px; 
+                height: 450px; 
             }
+        }
+        .small-chart-container {
+            position: relative;
+            width: 100%;
+            height: 250px;
         }
         .stat-card {
             background-color: white;
@@ -44,6 +49,11 @@
             font-size: 0.875rem; 
             color: #1A535C; /* Dark Teal */
             margin-top: 0.25rem; 
+            margin-bottom: 0.25rem;
+        }
+        .kpi-footnote {
+            font-size: 0.7rem;
+            color: #6c757d;
             margin-bottom: 0.5rem;
         }
         .kpi-previous-value {
@@ -121,6 +131,14 @@
             content: "▶"; /* Arrow for action items */
             color: #FF6B6B;
         }
+        .action-list .action-item-description {
+            font-size: 0.9rem; /* Smaller font for descriptions */
+            color: #333; /* Darker gray for readability */
+            margin-left: 0.5em; /* Indent description slightly */
+            margin-top: 0.25em;
+            display: block; /* Ensure it takes its own line if needed */
+        }
+
 
         table {
             width: 100%;
@@ -163,7 +181,7 @@
         <div class="container mx-auto px-6 text-center">
             <h1 class="text-4xl md:text-5xl font-bold report-title">ドクターリセラ公式ショップ Yahoo!店</h1>
             <p class="mt-3 text-2xl md:text-3xl text-gray-200">総合分析レポート</p>
-            <p class="mt-2 text-md text-gray-300">対象期間: 2025年04月 (前月比較: 2025年03月)</p>
+            <p class="mt-2 text-md text-gray-300">対象期間: 2025年05月 (前月比較: 2025年04月)</p>
         </div>
     </header>
 
@@ -172,29 +190,27 @@
         <section id="executiveSummary" class="mb-16 stat-card">
             <h3 class="section-title" style="border-color: #FF6B6B;">エグゼクティブサマリー：本レポートのポイント</h3>
             <p class="text-gray-600 mb-6 leading-relaxed">
-                本レポートは、ドクターリセラ公式ショップ Yahoo!店の2025年4月度のパフォーマンスを、3月度と比較分析したものです。主要なポイントは以下の通りです。
+                本レポートは、ドクターリセラ公式ショップ Yahoo!店の2025年5月度のパフォーマンスを、4月度と比較分析したものです。主要なポイントは以下の通りです。
             </p>
             <ul class="summary-list text-gray-700 space-y-3">
                 <li>
-                    <strong class="text-[#1A535C]">全体概況：</strong> 4月は3月比で<span class="font-bold negative-change">売上(-14.7%)</span>、<span class="font-bold negative-change">訪問者数(-14.4%)</span>、<span class="font-bold negative-change">平均客単価(-12.8%)</span>が減少しましたが、<span class="font-bold positive-change">平均購買率(+1.6pp, +14.7%)</span>は改善しました。他ストア比較では依然として集客力・売上規模に大きな課題があります。
+                    <strong class="text-[#1A535C]">全体概況：</strong> 5月は4月比で<span class="font-bold positive-change">売上(+47.1%)</span>、<span class="font-bold positive-change">訪問者数(+8.3%)</span>、<span class="font-bold positive-change">平均客単価(+41.1%)</span>が大幅に改善しました。一方で、<span class="font-bold negative-change">平均購買率(-0.5pp, -4.0%)</span>はわずかに低下しました。前月からの改善は顕著ですが、絶対的な集客力には依然として課題が残ります。
                 </li>
                 <li>
-                    <strong class="text-[#1A535C]">商品別動向：</strong> 「クレンジングジェル500g詰め替え用」は売上1位を維持し安定。同「ボトルセット」は売上倍増と急成長しました。一方、「化粧水CICAミスト」や「3個セット石けん」などは売上が大きく減少しました。
+                    <strong class="text-[#1A535C]">商品別動向 (5月 vs 4月)：</strong> 「クレンジングジェル500g詰め替え用」は売上1位を維持しつつ、売上・訪問者数ともに増加。特に購買率が大幅に向上しました。「ジェルクレンジング500g+専用ボトルセット」も好調を維持し、売上・訪問者数が増加。一方、「化粧水CICAミスト」は売上・訪問者数ともに減少し、購買率も低下。多くの商品で5月のセール施策等の影響が見られます。
                 </li>
                 <li>
                     <strong class="text-[#1A535C]">主要課題：</strong>
                     <ul class="list-disc list-inside ml-4 mt-1 text-sm">
-                        <li>圧倒的な<span class="font-bold negative-change">集客力不足</span>（特にカテゴリ流入ゼロは深刻）。</li>
-                        <li><span class="font-bold negative-change">平均客単価の低迷</span>。</li>
-                        <li>レポートデータ内の「ロケーションブロックエラー」による<span class="font-bold text-yellow-700">データ信頼性への懸念</span>。</li>
+                        <li>依然として低い<span class="font-bold negative-change">絶対的な集客力</span>（特にカテゴリ流入ゼロは深刻）。</li>
+                        <li>平均購買率の<span class="font-bold negative-change">微減</span>と、一部商品の購買率低下。</li>
                     </ul>
                 </li>
                 <li>
-                    <strong class="text-[#1A535C]">アクションプランの方向性：</strong>
+                    <strong class="text-[#1A535C]">アクションプランの評価と今後の方向性：</strong>
                     <ul class="list-disc list-inside ml-4 mt-1 text-sm">
-                        <li><span class="font-bold text-red-600">緊急対応</span>としてエラー解消とカテゴリ設定の総点検。</li>
-                        <li><span class="font-bold">集客強化</span>（SEO、キャンペーン活用、コンテンツマーケティング）。</li>
-                        <li><span class="font-bold">転換率・客単価向上</span>（商品ページ改善、クロスセル/アップセル強化、顧客エンゲージメント向上）。</li>
+                        <li>5月に実施されたセールやポイントアップ施策が、売上・訪問者数・客単価の大幅増に貢献した可能性が高いです。特に「キャンペーン」経由の訪問者数増加が顕著です。</li>
+                        <li>引き続き<span class="font-bold">集客基盤の強化</span>（SEO、カテゴリ最適化）と、<span class="font-bold">購買率の維持・向上</span>（特に課題商品のテコ入れ）、<span class="font-bold">顧客エンゲージメント施策</span>（VIPスタンプ等）の推進が重要です。</li>
                     </ul>
                 </li>
             </ul>
@@ -204,195 +220,210 @@
         </section>
 
         <section id="shopOverallHealth" class="mb-16">
-            <h3 class="section-title">第1章：2025年4月の全体像（前月比較）</h3>
-            <p class="text-gray-600 mb-8 leading-relaxed">お店全体のパフォーマンスを把握することは、個々の商品の状況を理解するための基礎となります。人間ドックでまず全身の状態をチェックするように、お店全体の「体力測定」結果から見ていきましょう。</p>
-
-            <h4 class="sub-section-title">1.1. 主要KPIの3月・4月比較：お店の「体力測定」結果</h4>
-            <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 mb-8">
+            <h3 class="section-title">第1章：2025年5月の全体像（前月比較）</h3>
+            
+            <h4 class="sub-section-title">1.1. 主要KPIの4月・5月比較：結果</h4>
+            <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6 mb-8">
                 <div id="kpiSalesCard" class="stat-card text-center"></div>
                 <div id="kpiVisitorsCard" class="stat-card text-center"></div>
-                <div id="kpiConversionRateCard" class="stat-card text-center"></div>
                 <div id="kpiAovCard" class="stat-card text-center"></div>
-                <div id="kpiRankCard" class="stat-card text-center lg:col-span-1"></div>
+                <div id="kpiConversionRateCard" class="stat-card text-center"></div>
             </div>
-            <div id="kpiSummaryTableContainer" class="mb-8">
-                </div>
-            <div class="stat-card">
-                <h5 class="content-title">主要KPIの変動要因分析</h5>
-                <p class="text-gray-700 leading-relaxed">
-                    2025年4月は3月に比べて、お店を訪れるお客様の数（訪問者数）が約14%減少し、それに伴い全体の売上も約15%減少しました。一方で、お店に来てくれたお客様が商品を購入してくれた割合（平均購買率）は1.6ポイント上昇し、約15%改善しています。しかし、一人のお客様が一度に使う金額（平均客単価）は約13%減少しました。
-                </p>
-                <p class="text-gray-700 leading-relaxed mt-3">
-                    ECサイトの売上は、基本的には「訪問者数 × 平均購買率 × 平均客単価」で構成されます。4月は、訪問者数と平均客単価の減少が、平均購買率の改善効果を上回り、結果として総売上の減少に繋がったと考えられます。
-                </p>
-            </div>
-             <div class="stat-card mt-8">
-                <h5 class="content-title">「他ストア実績」との比較から見える、私たちの強みと課題</h5>
-                <p class="text-gray-700 leading-relaxed">
-                    売上合計値と訪問者数における「他ストア実績より-100%」という数値は、競合する他のストアと比較して、当店の集客力と売上規模が著しく劣っている可能性を示唆しています。お店の存在が十分に知られていない、あるいはお客様がお店を見つけられていないという、マーケティング戦略上の大きな課題があることを意味します。
-                </p>
-                <p class="text-gray-700 leading-relaxed mt-3">
-                    一方で、平均購買率が他ストアの平均を上回っている点（4月: +3.8%）は一筋の光明です。一度お店を訪れてくれたお客様は、比較的高い確率で購入に至っていることを示しており、お店の品揃えや商品ページの魅力、購入手続きの分かりやすさが一定の評価を得ている可能性があります。この強みを維持・強化しつつ、弱点である集客を改善できれば、売上は大きく伸びる可能性があります。
-                </p>
-            </div>
-
-
-            <h4 class="sub-section-title">1.2. 流入元別 訪問者数の分析と対策</h4>
-            <p class="text-gray-600 mb-6 leading-relaxed">お店への訪問者がどの経路から来ているかを把握し、それぞれの経路に応じた対策を打つことが重要です。4月はほとんどの流入元で訪問者数が減少しており、特に「キャンペーン」や「ランキング」からの減少率が高いようです。</p>
-            <div class="chart-container mb-8" style="height: 400px;">
-                <canvas id="trafficSourceChart"></canvas>
-            </div>
-            <p class="text-xs text-gray-500 text-center mb-6">グラフ: 流入元別 訪問者数 (2025年4月)</p>
             
-            <div id="trafficSourceTableContainer" class="overflow-x-auto stat-card">
-                 <h5 class="content-title mb-3">流入元別 訪問者数 前月比較</h5>
-                </div>
-             <div class="stat-card mt-8">
-                <h5 class="content-title">流入元分析からの考察</h5>
+            <div id="kpiComparisonChartsContainer" class="stat-card">
+                 <h5 class="content-title mb-4 text-center">店舗全体 主要KPI 月次比較グラフ</h5>
+                 <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+                    <div class="text-center">
+                        <h6 class="font-semibold mb-2">売上合計値 (円)</h6>
+                        <div class="small-chart-container">
+                            <canvas id="salesKpiChart"></canvas>
+                        </div>
+                    </div>
+                    <div class="text-center">
+                        <h6 class="font-semibold mb-2">訪問者数 (人)</h6>
+                        <div class="small-chart-container">
+                            <canvas id="visitorsKpiChart"></canvas>
+                        </div>
+                    </div>
+                     <div class="text-center">
+                        <h6 class="font-semibold mb-2">平均客単価 (円)</h6>
+                        <div class="small-chart-container">
+                            <canvas id="aovKpiChart"></canvas>
+                        </div>
+                    </div>
+                    <div class="text-center">
+                        <h6 class="font-semibold mb-2">平均購買率 (%)</h6>
+                        <div class="small-chart-container">
+                            <canvas id="cvKpiChart"></canvas>
+                        </div>
+                    </div>
+                 </div>
+            </div>
+
+            <div class="stat-card">
+                <h5 class="content-title">主要KPIの変動要因分析 (5月 vs 4月)</h5>
                 <p class="text-gray-700 leading-relaxed">
-                    最も深刻なのは、「カテゴリ」経由の訪問者が3月・4月ともに0人という点です。これは、Yahoo!ショッピングのカテゴリページから当店の商品ページへの流入が全くないことを意味し、モール内での商品の露出が極端に少ない可能性を示唆しています。カテゴリページの最適化や、モール内広告の活用を早急に検討する必要があります。
+                    2025年5月は、4月と比較して素晴らしい改善が見られました。お店を訪れるお客様の数（訪問者数）が約8.3%増加し、これが売上全体の力強い成長に貢献しました。さらに特筆すべきは、一人のお客様が一度に使う金額（平均客単価）が約41.1%と大幅に増加した点です。これにより、全体の売上は約47.1%増と、前月の落ち込みからV字回復を果たしました。
+                </p>
+                <p class="text-gray-700 leading-relaxed mt-3">
+                    一方で、お店に来てくれたお客様が商品を購入してくれた割合（平均購買率）は12.0%と、4月の12.5%からわずかに0.5ポイント低下（相対変化率で約-4.0%）しました。これは、訪問者数と客単価の大幅な伸びに比べると小さな動きですが、今後の改善点として注視していく必要があります。
                 </p>
                  <p class="text-gray-700 leading-relaxed mt-3">
-                    「検索」からの流入も減少しており、SEO対策の見直しや強化が求められます。「外部サイト」からの流入が比較的維持できている点は評価できますが、どのサイトからの流入が多いのかを特定し、関係性を強化することも重要です。
+                    ECサイトの売上は「訪問者数 × 平均購買率 × 平均客単価」で構成されます。5月は、訪問者数の増加と平均客単価の大幅な上昇が、平均購買率の微減を補って余りある効果を発揮し、総売上の大幅増に繋がったと考えられます。特に5月に実施された「グランドフィナーレ（セール）参加」や「付与ポイント10倍」といった施策が、これらのKPI向上に大きく寄与した可能性が高いです。
                 </p>
             </div>
 
 
-            <h4 class="sub-section-title">1.3. レポートデータの注意点と限界</h4>
-            <div class="note-box">
-                <ul class="list-disc list-inside space-y-2 text-sm">
-                    <li><strong class="font-semibold">グラフのトレンド線表示なし:</strong> レポート内の各KPIグラフには過去12ヶ月の軸ラベルがありますが、実際のデータプロットやトレンド線が表示されていません。このため、過去1年間のKPI推移を具体的に読み取ることは困難です。</li>
-                    <li><strong class="font-semibold">訪問者数の詳細分析は別レポート:</strong> 流入キーワードや具体的な外部参照元など、より詳細な訪問者分析には別途「流入深掘レポート」が必要です。</li>
-                    <li><strong class="font-semibold text-red-700">ロケーションブロックエラー:</strong> レポート2ページ目に「ロケーションがブロックされているため、一部のコンテンツを表示できません」というエラーが表示されています。これが原因で一部データが正しくないか、比較数値が極端になっている可能性があります。<strong>このエラーの解消が最優先事項です。</strong></li>
-                    <li><strong class="font-semibold">「検索」流入の他ストア平均データ欠損:</strong> 2025年4月の流入元データにおいて、「検索」チャネルの「他ストア平均訪問者数」が「%」と表示されており、具体的な数値が欠損しています。</li>
-                </ul>
+            <h4 class="sub-section-title">1.2. 流入元別 訪問者数の分析と対策 (5月 vs 4月)</h4>
+            <p class="text-gray-600 mb-6 leading-relaxed">5月の訪問者数は406人と、4月の375人から8.3%増加しました。どの流入元がこの増加に貢献したのか、グラフで視覚的に比較してみましょう。</p>
+            
+            <div class="stat-card">
+                <h5 class="content-title mb-4 text-center">流入元別 訪問者数 前月比較 (5月 vs 4月)</h5>
+                <div class="chart-container mb-4" style="height: 400px;">
+                    <canvas id="trafficSourceComparisonChart"></canvas>
+                </div>
             </div>
+             <div class="stat-card mt-8">
+                <h5 class="content-title">流入元分析からの考察 (5月)</h5>
+                <p class="text-gray-700 leading-relaxed">
+                    5月の訪問者数増加に最も貢献したのは「キャンペーン」経由で、4月の9人から5月は26人へと約2.9倍に増加しました。これは、5月に実施された「グランドフィナーレ（セール）」や「ポイント10倍」といったキャンペーン施策が効果を発揮したことを明確に示しています。
+                </p>
+                 <p class="text-gray-700 leading-relaxed mt-3">
+                    「検索」からの流入も113人から126人へ微増、「外部サイト」も118人から120人へとほぼ横ばいを維持しました。「ストア全体」「その他」「製品」からの流入は微減しましたが、キャンペーン効果による全体の底上げが大きかったと言えます。
+                </p>
+                 <p class="text-gray-700 leading-relaxed mt-3">
+                    依然として「カテゴリ」経由の訪問者は0人のままであり、これはYahoo!ショッピング内での基本的な商品発見経路が機能していないという深刻な問題が継続していることを意味します。この点の早急な改善は、キャンペーン期間外の安定した集客基盤を築く上で不可欠です。
+                </p>
+            </div>
+
         </section>
 
         <section id="productPerformance" class="mb-16">
-            <h3 class="section-title">第2章：商品別パフォーマンス徹底解剖：輝いた商品、注目すべき商品</h3>
-            <p class="text-gray-600 mb-8 leading-relaxed">お店全体の健康状態を把握したところで、次に個々の商品がどのように活躍したか、あるいは苦戦したかを見ていきましょう。どの商品がお店の売上を支え、どの商品に改善の余地があるのかを具体的に明らかにします。</p>
+            <h3 class="section-title">第2章：商品別パフォーマンス徹底解剖 (5月 vs 4月)</h3>
+            <p class="text-gray-600 mb-8 leading-relaxed">
+                お店全体の好調な動きが、個々の商品にどのように反映されたか、あるいはされなかったかを見ていきましょう。5月の商品別データを4月と比較し、具体的な変化を捉えます。
+            </p>
 
-            <h4 class="sub-section-title">2.1. 売上ランキング変動：トップパフォーマーの変化と要因</h4>
+            <h4 class="sub-section-title">2.1. 売上ランキング変動：トップパフォーマーの変化と要因 (5月 vs 4月)</h4>
             <div class="stat-card">
-                <ul class="info-list">
-                    <li>「ドクターリセラ クレンジングジェル 500g 詰め替え用 (001010008)」は、3月・4月ともに売上1位を維持（売上205,700円）。注文件数は20件→22件と微増。安定した看板商品です。</li>
-                    <li>「【公式】ドクターリセラ ジェルクレンジング 500g+専用ボトルセット (001010008-1)」は、3月2位（62,700円）から4月も2位を維持しつつ売上が125,400円へと倍増。急成長株です。</li>
-                    <li>「化粧水 CICA 保湿ミスト (001010004)」は3月3位（49,104円）→4月4位（19,008円）へと売上・順位ともにダウン。</li>
-                    <li>「美容液 リフトエッセンス 30mL (001010006)」は3月4位（47,520円）→4月3位（23,760円）へと順位は上げたものの売上は減少。</li>
-                </ul>
-                <p class="text-gray-700 leading-relaxed mt-4">
-                    クレンジングジェル詰め替え用(001010008)の安定性と、同シリーズボトルセット(001010008-1)の急成長が目立ちます。ボトルセットの成長は新規顧客獲得や客単価アップに繋がるポジティブなサインです。
+                <p class="text-gray-700 leading-relaxed mb-4">
+                    5月の売上上位商品のパフォーマンスを4月と比較します。以下のグラフは、売上高のトップ6商品の月次変動を示しています。
                 </p>
+                 <div class="chart-container" style="height: 400px;">
+                    <canvas id="productSalesRankingChart"></canvas>
+                </div>
+                <p class="text-gray-700 leading-relaxed mt-4" id="productRankAnalysis"></p>
             </div>
 
-            <h4 class="sub-section-title">2.2. 成長株・要改善商品のピックアップ</h4>
+            <h4 class="sub-section-title">2.2. 成長株・要改善商品のピックアップ (5月 vs 4月)</h4>
             <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
                 <div class="stat-card">
-                    <h5 class="content-title">成長株：ジェルクレンジング 500g+専用ボトルセット (001010008-1)</h5>
-                    <p class="text-gray-700 leading-relaxed">売上100%増（62,700円→125,400円）、注文件数倍増（6件→12件）。4月の訪問者数65人（3月31人）、平均購買率18.5%（3月19.4%）。訪問者数の倍増が売上増の主因で、高い購買率も維持しています。</p>
-                    <p class="text-gray-700 leading-relaxed mt-3"><strong class="text-[#1A535C]">ヒント：</strong>お客様の購入意欲の先行指標となり得る「お気に入り保存数」や「カート投入数」の変動も注視しましょう。これらの指標が売上に先行して動く場合、将来予測や施策効果測定のヒントになります。</p>
+                    <h5 class="content-title">成長株・好調維持商品 (5月)</h5>
+                    <ul class="info-list" id="growthProductsList"></ul>
                 </div>
                 <div class="stat-card">
-                    <h5 class="content-title">要改善商品例</h5>
-                     <ul class="info-list">
-                        <li><strong>化粧水 CICA 保湿ミスト (001010004):</strong> 売上61.2%減（49,104円→19,008円）。訪問者数31.3%減、平均購買率5.0ポイント低下（12.0%→7.0%）。集客と転換双方に課題。</li>
-                        <li><strong>3個セット 石けん (004070017):</strong> 3月売上28,050円→4月売上0円。</li>
-                        <li><strong>その他売上ゼロ商品群:</strong> 「ポイントメイクリムーバー (001010003)」、「美容液 リポソーム (001010005)」など、複数商品で売上ゼロが継続。ページビュー・訪問者数も少ない傾向。</li>
-                    </ul>
+                    <h5 class="content-title">要改善・注目商品 (5月)</h5>
+                     <ul class="info-list" id="improvementProductsList"></ul>
                 </div>
             </div>
             
-            <h4 class="sub-section-title">2.3. 主要商品別 KPI月次比較</h4>
-            <div id="productKpiTableContainer" class="overflow-x-auto stat-card">
-                <h5 class="content-title mb-3">主要商品のパフォーマンス詳細 (2025年3月 vs 4月)</h5>
+            <h4 class="sub-section-title">2.3. 主要商品別 KPI月次比較 (5月 vs 4月)</h4>
+            <div id="productKpiChartsContainer" class="stat-card">
+                <h5 class="content-title mb-4 text-center">主要商品のKPI比較グラフ</h5>
+                <div class="grid grid-cols-1 gap-12">
+                    <div>
+                        <h6 class="font-semibold text-center mb-2">売上比較</h6>
+                        <div class="chart-container" style="height: 350px;">
+                            <canvas id="productSalesChart"></canvas>
+                        </div>
+                    </div>
+                    <div>
+                        <h6 class="font-semibold text-center mb-2">訪問者数比較</h6>
+                        <div class="chart-container" style="height: 350px;">
+                            <canvas id="productVisitorsChart"></canvas>
+                        </div>
+                    </div>
+                    <div>
+                        <h6 class="font-semibold text-center mb-2">購買率比較</h6>
+                        <div class="chart-container" style="height: 350px;">
+                            <canvas id="productCvChart"></canvas>
+                        </div>
+                    </div>
                 </div>
+            </div>
              <div class="stat-card mt-8">
-                <h5 class="content-title">商品別KPIからの考察</h5>
-                <p class="text-gray-700 leading-relaxed">
-                   「クレンジングジェル 500g 詰め替え用 (001010008)」は、訪問者数が2割以上減少したにも関わらず売上を維持できたのは、平均購買率が5.3ポイントも大幅に上昇したためです。これはリピーターや購入意欲の高い顧客の貢献が大きいと考えられます。
-                </p>
-                 <p class="text-gray-700 leading-relaxed mt-3">
-                   一方で、「化粧水 CICA 保湿ミスト (001010004)」は訪問者数の減少に加えて平均購買率も5ポイント低下しており、これが売上6割減という結果に繋がったと考えられます。お気に入り登録はされているものの購入に至らない場合、価格や商品説明などに改善の余地があるかもしれません。
-                </p>
+                <h5 class="content-title">商品別KPIからの考察 (5月)</h5>
+                <p class="text-gray-700 leading-relaxed" id="productKpiInsights"></p>
             </div>
         </section>
 
         <section id="factorAnalysis" class="mb-16">
-            <h3 class="section-title">第3章：なぜ変わった？パフォーマンス変動の要因を探る（仮説）</h3>
+            <h3 class="section-title">第3章：なぜ変わった？5月のパフォーマンス変動要因（仮説）</h3>
              <div class="stat-card">
-                <h4 class="sub-section-title mt-0">3.1. 各商品のデータから推測される要因</h4>
-                <div class="mb-6">
-                    <h5 class="content-title">ドクターリセラ クレンジングジェル 500g 詰め替え用 (001010008)</h5>
-                    <p class="text-gray-700 leading-relaxed">4月に訪問者数・PV数が減少したものの、平均購買率が11.38%→16.7%と大幅向上し売上維持。レビュー件数増 (1→2件)、お気に入り保存数増 (43→55) も貢献。リピーターや購入意欲の高い顧客の比率が高まった可能性。効率の良い販売状態。</p>
-                </div>
-                <div>
-                    <h5 class="content-title">化粧水 CICA 保湿ミスト (001010004)</h5>
-                    <p class="text-gray-700 leading-relaxed">4月に訪問者数・PV数・平均購買率が全て低下。特にカート投入数が18→4と激減。お気に入り保存数は横ばいだが購入に繋がらず。レビュー評価4.2。購入の決め手不足か、他商品への流出、リピート不振の可能性。商品ページの魅力改善やプロモーションが有効か。</p>
-                </div>
-                
-                <h4 class="sub-section-title">3.2. プロモーションや季節性の影響の可能性</h4>
-                <p class="text-gray-700 leading-relaxed mt-4">
-                    提供データのみでは断定できませんが、3月・4月の特別なキャンペーン有無、商品の季節的需要変動もパフォーマンスに影響した可能性があります。これらの外部要因は、社内情報と照らし合わせて分析の精度を高めることが重要です。
+                <h4 class="sub-section-title mt-0">3.1. 5月のKPI大幅改善の要因</h4>
+                <p class="text-gray-700 leading-relaxed">
+                    5月の売上、訪問者数、平均客単価の大幅な改善は、主に以下の要因によるものと推測されます。
                 </p>
+                <ul class="info-list">
+                    <li><strong>大型セールイベントへの参加：</strong>5月17日、18日に開催された「グランドフィナーレ（セール）」への参加は、短期的に多くの注目を集め、新規顧客を含む広範な層へのリーチを可能にしたと考えられます。セールによる価格的魅力が購買を後押ししたでしょう。</li>
+                    <li><strong>ポイントアップ施策の効果：</strong>「付与ポイント10倍」は、特にYahoo!ショッピングのヘビーユーザーにとって強力なインセンティブとなり、高額商品の購入やまとめ買いを促進し、平均客単価の大幅な上昇に繋がった可能性があります。<span class="text-red-600 font-bold">（6月は申し込み済みでキャンペーン参加できるが7月以降は全社と足並みそろえる形なのでキャンペーン参加できない。）</span></li>
+                    <li><strong>キャンペーン経由の訪問者増：</strong>流入元別データで「キャンペーン」経由の訪問者数が約2.9倍に増加していることから、これらの販促施策が集客に直接的な効果をもたらしたことが確認できます。</li>
+                </ul>
+                <p class="text-gray-700 leading-relaxed mt-3">
+                    一方で、平均購買率がわずかに低下した点は、セールやポイントアップによって広範な顧客層が訪れたものの、必ずしも全員が高い購入意欲を持っていたわけではなかった可能性を示唆します。セール期間中は通常時よりもウィンドウショッピング的な行動が増えることも一因かもしれません。
+                </p>
+                
+                <h4 class="sub-section-title">3.2. 継続的な課題と今後の視点</h4>
+                <p class="text-gray-700 leading-relaxed mt-4">
+                    5月の施策は短期的な成果として非常に有効でしたが、以下の点は引き続き重要な課題として認識する必要があります。
+                </p>
+                 <ul class="info-list">
+                    <li><strong>オーガニック集客力の強化：</strong>キャンペーンに依存しない、安定的かつ継続的な集客基盤（SEO、カテゴリ最適化、コンテンツマーケティング等）の構築は依然として最重要課題です。「カテゴリ」流入ゼロの問題解決は急務です。</li>
+                    <li><strong>顧客エンゲージメントの深化：</strong>セールやポイントで獲得した顧客を、いかにリピーターへと育成するかが今後の鍵となります。「VIPスタンプ」のようなロイヤルティプログラムの成果が期待されます。</li>
+                </ul>
             </div>
         </section>
 
         <section id="actionPlan" class="mb-16">
-            <h3 class="section-title">第4章：明日からできる！マーケティングアクションプラン</h3>
-            <p class="text-gray-600 mb-8 leading-relaxed">これまでの分析を踏まえ、具体的なマーケティングアクションプランを提案します。「勝ち筋」をさらに伸ばし、「伸びしろ」を最大限に引き出し、お客様との絆を深めるためのアイデアです。</p>
+            <h3 class="section-title">第4章：アクションプラン</h3>
+            <p class="text-gray-600 mb-8 leading-relaxed">5月の施策は短期的に大きな成果を上げました。この勢いを活かしつつ、中長期的な成長基盤を構築するためのアクションプランを提案します。</p>
 
             <div class="stat-card mb-8">
-                <h4 class="sub-section-title mt-0">4.1. 「勝ち筋」を伸ばす：好調商品のさらなる販売促進アイデア</h4>
-                <p class="text-gray-700 mb-4 leading-relaxed">対象商品例：「クレンジングジェル 500g 詰め替え用 (001010008)」、「ジェルクレンジング 500g+専用ボトルセット (001010008-1)」</p>
+                <h4 class="sub-section-title mt-0">4.1. 5月実施施策の評価と継続検討</h4>
                 <ul class="info-list action-list">
-                    <li><strong>クロスセル・アップセルの強化:</strong> 詰め替え用購入者に専用ボトルや関連スキンケア商品を提案。「合わせ買いで送料無料」やセット割引で客単価アップ。</li>
-                    <li><strong>レビューの活用と促進:</strong> 高評価レビューを目立つ位置に掲載。購入者にレビュー投稿依頼（インセンティブ付与も検討）。</li>
-                    <li><strong>優良顧客向け施策:</strong> リピーターに限定クーポン発行や新商品の先行案内でロイヤルティ向上。</li>
-                </ul>
-            </div>
-
-            <div class="stat-card mb-8">
-                <h4 class="sub-section-title mt-0">4.2. 「伸びしろ」を引き出す：課題商品のテコ入れ策</h4>
-                <p class="text-gray-700 mb-4 leading-relaxed">対象商品例：「化粧水 CICA 保湿ミスト (001010004)」、「3個セット 石けん (004070017)」、売上ゼロ商品群</p>
-                <ul class="info-list action-list">
-                    <li><strong>商品ページの改善 (LPO):</strong> 魅力的なビジュアル（写真・動画）、ターゲット顧客に響く商品説明文、お客様の声の活用。</li>
-                    <li><strong>ターゲット広告の活用:</strong> 課題商品に関心を持ちそうな特定顧客層にピンポイントで広告配信。</li>
-                    <li><strong>お試しサイズの活用・トライアル促進:</strong> 売上ゼロ商品や高価格帯商品はお試しサイズや初回限定価格で気軽に試せるようにする。</li>
-                    <li><strong>セット販売の見直し:</strong> 「3個セット 石けん」のような商品は、セットのメリット（価格、利便性）が伝わっているか再検討。</li>
-                </ul>
-            </div>
-
-            <div class="stat-card mb-8">
-                <h4 class="sub-section-title mt-0">4.3. お客様との絆を深める：顧客エンゲージメント向上施策</h4>
-                <ul class="info-list action-list">
-                    <li><strong>メールマガジン/LINE等での情報発信:</strong> 新商品、スキンケア情報、開発秘話などを定期配信。購入履歴に基づいたパーソナルな情報提供。</li>
-                    <li><strong>SNSの活用:</strong> 商品の使用感、スタッフの日常などを投稿し親近感を醸成。ユーザー参加型企画で双方向コミュニケーション。</li>
-                    <li><strong>お気に入りユーザーへのアプローチ:</strong> お気に入り登録商品がセール対象になった際や在庫僅少時にお知らせ通知。</li>
+                    <li>
+                        <strong>セール・ポイントアップ施策の効果分析：</strong>
+                        <span class="action-item-description">今回の「グランドフィナーレ（セール）」や「ポイント10倍」で、どの商品が特に売れたのか、新規顧客と既存顧客のどちらの反応が大きかったのか等を詳細に分析します。費用対効果を検証し、今後の同様の施策実施の判断材料とします。</span>
+                    </li>
+                    <li>
+                        <strong>VIPスタンプ制度の定着と効果測定：</strong>
+                        <span class="action-item-description">5月28日から開始されたVIPスタンプ制度の利用状況、顧客のリピート率やLTV（顧客生涯価値）への影響を継続的にモニタリングします。顧客からのフィードバックも収集し、制度の改善に繋げます。</span>
+                    </li>
+                     <li>
+                        <strong>アフィリエイト施策の成果確認：</strong>
+                        <span class="action-item-description">5月31日から開始したアフィリエイト特別料率5％（特別料率4.0％　＋　基本料率1 ％）の効果（トラフィック増、売上増など）を6月以降注視し、費用対効果の高いパートナーとの連携を強化します。</span>
+                    </li>
                 </ul>
             </div>
             
-            <div class="stat-card">
-                <h4 class="sub-section-title mt-0">4.4. 見つけてもらう、選んでもらう：集客力と転換力アップのヒント</h4>
+            <div class="stat-card mb-8">
+                <h4 class="sub-section-title mt-0">4.2. 継続的な集客基盤の強化</h4>
                  <ul class="info-list action-list">
-                    <li><strong>SEO対策 (検索エンジン最適化):</strong> ターゲットキーワードを商品名や説明文に自然に盛り込む。Yahoo!ショッピング内SEO（適切なカテゴリ登録、タグ設定）も重要。</li>
-                    <li><strong>コンテンツマーケティング導入の検討:</strong> お客様の悩み解決に役立つ情報（ブログ記事、特集ページ）を発信し、自然検索からの訪問者を増やし商品へ誘導。</li>
-                    <li><strong>サイト全体の回遊性向上:</strong> 関連商品表示の精度向上、カテゴリ分類の見直し、特集ページ作成などでサイトの使い勝手を改善。</li>
-                    <li><strong>流入元別分析と対策の継続:</strong> 特に「カテゴリ」流入ゼロの早急な原因究明と対策。各チャネルの特性に応じた集客強化。</li>
+                    <li><strong>カテゴリページの最適化（最優先）：</strong>「カテゴリ」流入ゼロの問題を解決するため、Yahoo!ショッピングのガイドラインを確認し、全商品のカテゴリ登録を再点検・修正します。必要であれば専門家のサポートも検討します。</li>
+                    <li><strong>SEO対策の地道な積み重ね：</strong>ターゲット顧客が検索するキーワードを意識した商品名・商品説明の見直し、コンテンツマーケティング（お役立ち記事作成など）による自然検索流入の増加を目指します。</li>
+                </ul>
+            </div>
+
+            <div class="stat-card">
+                 <h4 class="sub-section-title mt-0">4.3. 購買率・客単価のさらなる向上</h4>
+                 <ul class="info-list action-list">
+                    <li><strong>商品ページの魅力向上（LPO）：</strong>売れ筋商品だけでなく、課題のある商品についても、写真、説明文、レビューの見せ方などを改善し、転換率アップを目指します。<span class="action-item-description text-blue-600 font-semibold">なお、課題商品であった「化粧水 CICA 保湿ミスト」については、6月に新しいLP（ランディングページ）に差し替え済みです。</span></li>
+                    <li><strong>クロスセル・アップセル提案の強化：</strong>関連性の高い商品を効果的に提案する仕組み（手動またはツール導入）を強化し、平均客単価の向上を図ります。特に、5月に客単価が大幅に向上した要因を分析し、再現性を高めます。</li>
+                    <li><strong>定期的なプロモーションの実施：</strong>大規模セールだけでなく、季節イベントに合わせた小規模なキャンペーンや、特定商品にフォーカスしたプロモーションを計画的に実施し、顧客の購買意欲を喚起します。</li>
                 </ul>
             </div>
         </section>
-
-        <section id="conclusion" class="mb-12 stat-card">
-            <h3 class="section-title">おわりに：変化を力に、未来を創る</h3>
-            <p class="text-gray-700 leading-relaxed">
-                2025年4月の分析結果として、訪問者数と平均客単価は減少しましたが、平均購買率は改善しました。商品別では「クレンジングジェル500g」シリーズが好調を維持し、特にボトルセットが成長しましたが、「化粧水CICAミスト」などは課題が見えました。最大の課題は、競合と比較して集客力が著しく低い点です。
-            </p>
-            <p class="text-gray-700 leading-relaxed mt-3">
-                このレポートは現状の一断面であり、重要なのは今後もデータを継続的に確認し、PDCAサイクルを回して改善行動を続けることです。このレポートが具体的なアクションのきっかけとなることを願っています。
-            </p>
-        </section>
-
+        
     </main>
 
     <footer class="bg-[#1A535C] text-gray-400 py-8 mt-12">
@@ -407,50 +438,69 @@
 
         // --- Overall KPI Data (from PDF analysis) ---
         const kpiData = {
-            apr: {
-                sales: 432278, rank: 15951, visitors: 375, conversionRate: 12.5, aov: 9197,
-                peerComparison: { sales: "-100%", visitors: "-100%", conversionRate: "+3.8%", aov: "-3,619円" }
+            may: { // Current Month: May 2025
+                sales: 635730, rank: 13234, visitors: 406, conversionRate: 12.0, aov: 12974,
+                peerComparison: { sales: "-100%", visitors: "-100%", conversionRate: "+0.3%", aov: "-1,042円" }
             },
-            mar: {
-                sales: 506484, rank: 16304, visitors: 438, conversionRate: 10.9, aov: 10552
+            apr: { // Previous Month: April 2025
+                sales: 432278, rank: 15951, visitors: 375, conversionRate: 12.5, aov: 9197
             }
         };
 
         // --- Traffic Source Data (from PDF analysis) ---
         const trafficData = {
-            apr: { 'カテゴリ': 0, 'キャンペーン': 9, 'ストア全体': 109, 'その他': 44, 'トップページ': 51, 'ランキング': 9, '外部サイト': 118, '検索': 113, '製品': 19 },
-            mar: { 'カテゴリ': 0, 'キャンペーン': 15, 'ストア全体': 153, 'その他': 69, 'トップページ': 60, 'ランキング': 17, '外部サイト': 132, '検索': 134, '製品': 29 }
+            may: { 'カテゴリ': 0, 'キャンペーン': 26, 'ストア全体': 111, 'その他': 54, 'トップページ': 50, 'ランキング': 9, '外部サイト': 120, '検索': 126, '製品': 16 },
+            apr: { 'カテゴリ': 0, 'キャンペーン': 9, 'ストア全体': 109, 'その他': 44, 'トップページ': 51, 'ランキング': 9, '外部サイト': 118, '検索': 113, '製品': 19 }
         };
-        const trafficSourceOrder = ['カテゴリ', 'キャンペーン', 'ストア全体', '検索', '外部サイト', 'トップページ', '製品', 'ランキング', 'その他'];
+        const trafficSourceOrder = ['カテゴリ', '検索', '外部サイト', 'ストア全体', 'トップページ', 'キャンペーン', 'その他', '製品', 'ランキング'];
 
 
-        // --- Product KPI Data (from Markdown Report Table 2) ---
-        const productKpiData = [
-            { code: '001010008', name: 'ドクターリセラ クレンジングジェル 500g 詰め替え用', marSales: 205700, aprSales: 205700, marVisitors: 167, aprVisitors: 132, marCv: 11.4, aprCv: 16.7, marFav: 43, aprFav: 55, marCart: 16, aprCart: 12 },
-            { code: '001010008-1', name: '【公式】ドクターリセラ ジェルクレンジング 500g+専用ボトルセット', marSales: 62700, aprSales: 125400, marVisitors: 31, aprVisitors: 65, marCv: 19.4, aprCv: 18.5, marFav: 2, aprFav: 6, marCart: 2, aprCart: 0 },
-            { code: '001010006', name: '美容液 40代 50代 リフトエッセンス 30mL', marSales: 47520, aprSales: 23760, marVisitors: 48, aprVisitors: 29, marCv: 8.3, aprCv: 10.3, marFav: 14, aprFav: 15, marCart: 2, aprCart: 0 },
-            { code: '001010004', name: '化粧水 CICA 保湿ミスト 100mL', marSales: 49104, aprSales: 19008, marVisitors: 83, aprVisitors: 57, marCv: 12.0, aprCv: 7.0, marFav: 37, aprFav: 37, marCart: 18, aprCart: 4 },
-            { code: '001010001', name: 'ドクターリセラ クレンジングジェル 200g', marSales: 31680, aprSales: 15840, marVisitors: 65, aprVisitors: 52, marCv: 10.8, aprCv: 5.8, marFav: 18, aprFav: 19, marCart: 9, aprCart: 8 },
-            { code: '004070017', name: '3個セット 石けん ピュアソープ70g', marSales: 28050, aprSales: 0, marVisitors: 32, aprVisitors: 13, marCv: 15.6, aprCv: 0.0, marFav: 11, aprFav: 11, marCart: 2, aprCart: 3 }
+        // --- Product KPI Data ---
+        // April 2025 Product Data (extracted from previous productKpiData which was Apr vs Mar)
+        const productKpiDataApr = [
+            { code: '001010008', name: 'ドクターリセラ クレンジングジェル 500g 詰め替え用', sales: 205700, visitors: 132, cv: 16.7, fav: 55, cart: 12, orders: 22 },
+            { code: '001010008-1', name: '【公式】ドクターリセラ ジェルクレンジング 500g+専用ボトルセット', sales: 125400, visitors: 65, cv: 18.5, fav: 6, cart: 0, orders: 12 },
+            { code: '001010006', name: '美容液 40代 50代 リフトエッセンス 30mL', sales: 23760, visitors: 29, cv: 10.3, fav: 15, cart: 0, orders: 3 },
+            { code: '001010004', name: '化粧水 CICA 保湿ミスト 100mL', sales: 19008, visitors: 57, cv: 7.0, fav: 37, cart: 4, orders: 4 },
+            { code: '001010001', name: 'ドクターリセラ クレンジングジェル 200g', sales: 15840, visitors: 52, cv: 5.8, fav: 19, cart: 8, orders: 3 },
+            { code: '004070017', name: '3個セット 石けん ピュアソープ70g', sales: 0, visitors: 13, cv: 0.0, fav: 11, cart: 3, orders: 0 }
         ];
+
+        // May 2025 Product Data (from new CSV - representative sample)
+        // CSV Columns: 商品管理番号(商品URL),商品名,ページビュー,訪問者数,注文件数,注文者数,注文単価,売上,転換率,客単価,お気に入り登録数,カート投入数,レビュー件数,レビュー平均点
+        const productKpiDataMay = [
+            { code: '001010008', name: 'クレンジングジェル 500g 詰替', sales: 285180, visitors: 148, cv: 20.3, fav: 68, cart: 15, orders: 30}, // Shortened Name
+            { code: '001010008-1', name: 'ジェルクレンジング 500g+ボトル', sales: 151800, visitors: 75, cv: 20.0, fav: 12, cart: 3, orders: 15}, // Shortened Name
+            { code: '001010006', name: 'リフトエッセンス 30mL', sales: 31680, visitors: 38, cv: 10.5, fav: 20, cart: 2, orders: 4 }, // Shortened Name
+            { code: '001010004', name: '化粧水 CICA ミスト 100mL', sales: 14256, visitors: 42, cv: 4.8, fav: 33, cart: 2, orders: 2 }, // Shortened Name
+            { code: '001010001', name: 'クレンジングジェル 200g', sales: 7920, visitors: 25, cv: 6.7, fav: 15, cart: 3, orders: 2 }, // Shortened Name
+            { code: '004070017', name: '3個セット 石けん', sales: 9350, visitors: 10, cv: 10.0, fav: 10, cart: 1, orders: 1 }, // Shortened Name
+        ];
+
 
         // --- Helper functions ---
         function formatCurrency(value) { return value.toLocaleString('ja-JP') + "円"; }
         function formatNumber(value) { return value.toLocaleString('ja-JP'); }
-        function formatPercentage(value, precision = 1) { return value.toFixed(precision) + "%"; }
+        function formatPercentage(value, precision = 1) { return parseFloat(value).toFixed(precision) + "%"; } 
 
         function calculateChange(current, previous, isRank = false, isPercentagePoint = false) {
-            if (previous === 0 || previous === null || previous === undefined || current === null || current === undefined) {
-                return { absolute: 'N/A', percentage: 'N/A', arrow: '', class: 'neutral-change', percentageRaw: 0 };
+            if (previous === null || previous === undefined || current === null || current === undefined || (previous === 0 && current !== 0 && !isRank) ) {
+                 if (current > 0 && (previous === 0 || previous === null)) return { absolute: current, percentage: 'New', arrow: '▲', class: 'positive-change', percentageRaw: Infinity };
+                 if (current === 0 && previous > 0) return { absolute: -previous, percentage: '-100.0%', arrow: '▼', class: 'negative-change', percentageRaw: -100 };
+                 return { absolute: 'N/A', percentage: 'N/A', arrow: '', class: 'neutral-change', percentageRaw: 0 };
             }
+             if (previous === 0 && current === 0) {
+                return { absolute: 0, percentage: '0.0%', arrow: '', class: 'neutral-change', percentageRaw: 0 };
+            }
+
             const absoluteChange = current - previous;
             const percentageChange = (previous !== 0) ? (absoluteChange / previous) * 100 : (current > 0 ? Infinity : 0) ;
             let arrow = '';
             let changeClass = 'neutral-change';
 
-            const effectiveChange = isRank ? -absoluteChange : absoluteChange; // For rank, a decrease is positive
+            const effectiveChange = isRank ? -absoluteChange : absoluteChange; 
 
-            if (effectiveChange > 0.001) { // Allow for small floating point inaccuracies
+            if (effectiveChange > 0.001) { 
                 arrow = '▲';
                 changeClass = 'positive-change';
             } else if (effectiveChange < -0.001) {
@@ -473,139 +523,124 @@
             };
         }
 
-        // --- Populate KPI Overview Cards & Summary Table ---
-        function populateKpiCard(id, title, currentValue, previousValue, unit, peerComparison, isRank = false, isPercentagePoint = false) {
+        // --- Populate KPI Overview Cards ---
+        function populateKpiCard(id, title, currentValue, previousValue, unit, isRank = false, isPercentagePoint = false) {
             const card = document.getElementById(id);
             if (!card) return;
             const change = calculateChange(currentValue, previousValue, isRank, isPercentagePoint);
             
-            let formattedCurrent = isRank ? formatNumber(currentValue) + unit : (unit === '%' ? formatPercentage(currentValue) : formatCurrency(currentValue));
-            let formattedPrevious = isRank ? formatNumber(previousValue) + unit : (unit === '%' ? formatPercentage(previousValue) : formatCurrency(previousValue));
+            let formattedCurrent, formattedPrevious;
+            if (isRank) { 
+                formattedCurrent = formatNumber(currentValue) + unit;
+                formattedPrevious = formatNumber(previousValue) + unit;
+            } else if (unit === '%') {
+                formattedCurrent = formatPercentage(currentValue);
+                formattedPrevious = formatPercentage(previousValue);
+            } else if (unit === '人') {
+                formattedCurrent = formatNumber(currentValue) + '人';
+                formattedPrevious = formatNumber(previousValue) + '人';
+            } else { 
+                formattedCurrent = formatCurrency(currentValue);
+                formattedPrevious = formatCurrency(previousValue);
+            }
+            
             let formattedAbsoluteChange;
-            if (isRank) formattedAbsoluteChange = (change.absolute !== 0 ? (change.absolute > 0 ? '+' : '') + formatNumber(change.absolute) + unit : '変動なし');
-            else if (unit === '%') formattedAbsoluteChange = (change.absolute >= 0 ? '+' : '') + change.absolute.toFixed(1) + "pp";
-            else formattedAbsoluteChange = formatCurrency(change.absolute);
+            if (isRank) {
+                formattedAbsoluteChange = (change.absolute !== 0 ? (change.absolute > 0 ? '+' : '') + formatNumber(Math.abs(change.absolute)) + unit : '変動なし');
+            } else if (unit === '%') { 
+                formattedAbsoluteChange = (change.absolute >= 0 ? '+' : '') + change.absolute.toFixed(1) + "pp";
+            } else if (unit === '人') {
+                formattedAbsoluteChange = formatNumber(change.absolute) + '人';
+            } else { 
+                formattedAbsoluteChange = formatCurrency(change.absolute);
+            }
 
+            let footnote = '';
+            if (title === '平均購買率') {
+                footnote = `<p class="kpi-footnote">※ (注文者数 / 訪問者数) × 100</p>`;
+            }
 
             card.innerHTML = `
                 <div>
                     <p class="kpi-value">${formattedCurrent}</p>
                     <p class="kpi-label">${title}</p>
+                    ${footnote}
                     <p class="kpi-previous-value">前月: ${formattedPrevious}</p>
                 </div>
                 <p class="kpi-change-comparison ${change.class}">
                     前月比: ${formattedAbsoluteChange} (${change.percentage}) <span class="${change.class}">${change.arrow}</span>
                 </p>
-                ${peerComparison ? `<p class="kpi-change-comparison ${peerComparison.startsWith('-') || peerComparison.includes("低い") ? 'negative-change' : (peerComparison.startsWith('+') || peerComparison.includes("高い") ? 'positive-change' : 'neutral-change')}">他ストア実績より: ${peerComparison}</p>` : ''}
             `;
         }
         
-        populateKpiCard('kpiSalesCard', '売上合計値 (税込)', kpiData.apr.sales, kpiData.mar.sales, '円', kpiData.apr.peerComparison.sales);
-        populateKpiCard('kpiVisitorsCard', '訪問者数', kpiData.apr.visitors, kpiData.mar.visitors, '人', kpiData.apr.peerComparison.visitors);
-        populateKpiCard('kpiConversionRateCard', '平均購買率', kpiData.apr.conversionRate, kpiData.mar.conversionRate, '%', kpiData.apr.peerComparison.conversionRate, false, true);
-        populateKpiCard('kpiAovCard', '平均客単価', kpiData.apr.aov, kpiData.mar.aov, '円', kpiData.apr.peerComparison.aov);
-        populateKpiCard('kpiRankCard', '総合順位', kpiData.apr.rank, kpiData.mar.rank, '位', null, true);
+        populateKpiCard('kpiSalesCard', '売上合計値 (税込)', kpiData.may.sales, kpiData.apr.sales, '円');
+        populateKpiCard('kpiVisitorsCard', '訪問者数', kpiData.may.visitors, kpiData.apr.visitors, '人');
+        populateKpiCard('kpiAovCard', '平均客単価', kpiData.may.aov, kpiData.apr.aov, '円');
+        populateKpiCard('kpiConversionRateCard', '平均購買率', kpiData.may.conversionRate, kpiData.apr.conversionRate, '%', false, true);
+        
+        // --- Populate KPI Comparison Charts ---
+        const kpiChartOptions = (unit) => {
+             let options = {
+                responsive: true, maintainAspectRatio: false, indexAxis: 'y',
+                scales: { 
+                    x: { beginAtZero: true, ticks: { color: '#1A535C', callback: function(value) {
+                         if (unit === '円' && value >= 1000) return (value/1000) + 'k';
+                         if (unit === '%') return value + '%';
+                         return value;
+                    }}},
+                    y: { ticks: { color: '#1A535C' } }
+                },
+                plugins: {
+                    legend: { display: false },
+                    tooltip: {
+                        callbacks: { label: (context) => {
+                             let label = context.dataset.label || '';
+                             if (label) { label += ': '; }
+                             let value = context.parsed.x;
+                             if (unit === '円') label += formatCurrency(value);
+                             else if (unit === '%') label += formatPercentage(value);
+                             else label += formatNumber(value) + (unit === '人' ? '人' : '');
+                             return label;
+                        }}
+                    }
+                }
+            };
+            return options;
+        };
 
-        const kpiSummaryTableContainer = document.getElementById('kpiSummaryTableContainer');
-        let kpiTableHTML = `
-            <div class="stat-card">
-            <h5 class="content-title mb-3">店舗全体 主要KPI 月次比較サマリー</h5>
-            <div class="overflow-x-auto">
-            <table>
-                <thead>
-                    <tr>
-                        <th>KPI項目</th>
-                        <th class="text-right">2025年3月実績</th>
-                        <th class="text-right">2025年4月実績</th>
-                        <th class="text-right">前月比（数値）</th>
-                        <th class="text-right">前月比（増減率）</th>
-                    </tr>
-                </thead>
-                <tbody>`;
-
-        const kpiItems = [
-            { label: '売上合計値(税込)', mar: kpiData.mar.sales, apr: kpiData.apr.sales, unit: '円' },
-            { label: '訪問者数', mar: kpiData.mar.visitors, apr: kpiData.apr.visitors, unit: '人' },
-            { label: '平均購買率', mar: kpiData.mar.conversionRate, apr: kpiData.apr.conversionRate, unit: '%', isPercentagePoint: true },
-            { label: '平均客単価', mar: kpiData.mar.aov, apr: kpiData.apr.aov, unit: '円' },
-            { label: '総合順位', mar: kpiData.mar.rank, apr: kpiData.apr.rank, unit: '位', isRank: true }
-        ];
-
-        kpiItems.forEach(item => {
-            const change = calculateChange(item.apr, item.mar, item.isRank, item.isPercentagePoint);
-            let formattedMar = item.unit === '%' ? formatPercentage(item.mar) : (item.unit === '位' ? formatNumber(item.mar) + item.unit : formatCurrency(item.mar));
-            let formattedApr = item.unit === '%' ? formatPercentage(item.apr) : (item.unit === '位' ? formatNumber(item.apr) + item.unit : formatCurrency(item.apr));
-            let formattedAbsolute;
-            if (item.isRank) formattedAbsolute = (change.absolute !== 0 ? (change.absolute > 0 ? '+' : '') + formatNumber(change.absolute) + item.unit : '変動なし');
-            else if (item.isPercentagePoint) formattedAbsolute = (change.absolute >= 0 ? '+' : '') + change.absolute.toFixed(1) + "pp";
-            else formattedAbsolute = item.unit === '人' ? formatNumber(change.absolute) + item.unit : formatCurrency(change.absolute);
-
-            kpiTableHTML += `
-                <tr>
-                    <td>${item.label}</td>
-                    <td class="text-right">${formattedMar}</td>
-                    <td class="text-right">${formattedApr}</td>
-                    <td class="text-right ${change.class}">${formattedAbsolute}</td>
-                    <td class="text-right ${change.class}">${change.percentage} ${change.arrow}</td>
-                </tr>`;
+        new Chart(document.getElementById('salesKpiChart'), {
+            type: 'bar',
+            data: { labels: ['4月', '5月'], datasets: [{ data: [kpiData.apr.sales, kpiData.may.sales], backgroundColor: ['#a0d2db', '#4ECDC4'] }] },
+            options: kpiChartOptions('円')
         });
-        kpiTableHTML += `</tbody></table></div></div>`;
-        kpiSummaryTableContainer.innerHTML = kpiTableHTML;
+        new Chart(document.getElementById('visitorsKpiChart'), {
+            type: 'bar',
+            data: { labels: ['4月', '5月'], datasets: [{ data: [kpiData.apr.visitors, kpiData.may.visitors], backgroundColor: ['#a0d2db', '#4ECDC4'] }] },
+            options: kpiChartOptions('人')
+        });
+        new Chart(document.getElementById('aovKpiChart'), {
+            type: 'bar',
+            data: { labels: ['4月', '5月'], datasets: [{ data: [kpiData.apr.aov, kpiData.may.aov], backgroundColor: ['#a0d2db', '#4ECDC4'] }] },
+            options: kpiChartOptions('円')
+        });
+        new Chart(document.getElementById('cvKpiChart'), {
+            type: 'bar',
+            data: { labels: ['4月', '5月'], datasets: [{ data: [kpiData.apr.conversionRate, kpiData.may.conversionRate], backgroundColor: ['#a0d2db', '#4ECDC4'] }] },
+            options: kpiChartOptions('%')
+        });
 
 
         // --- Populate Traffic Source Table & Chart ---
-        const trafficTableContainer = document.getElementById('trafficSourceTableContainer');
-        let trafficTableHTML = `
-            <table>
-                <thead>
-                    <tr>
-                        <th>流入元</th>
-                        <th class="text-right">訪問者数 (4月)</th>
-                        <th class="text-right">訪問者数 (3月)</th>
-                        <th class="text-right">前月比 (絶対数)</th>
-                        <th class="text-right">前月比 (%)</th>
-                    </tr>
-                </thead>
-                <tbody>`;
+        const trafficSourceComparisonLabels = [];
+        const trafficSourceDataMay = [];
+        const trafficSourceDataApr = [];
         
-        const trafficChartLabels = [];
-        const trafficChartDataApr = [];
-        let totalAprVisitors = 0;
-        let totalMarVisitors = 0;
-
         trafficSourceOrder.forEach(source => {
-            if (trafficData.apr.hasOwnProperty(source)) {
-                trafficChartLabels.push(source);
-                const aprVal = trafficData.apr[source];
-                const marVal = trafficData.mar[source] || 0;
-                trafficChartDataApr.push(aprVal);
-                totalAprVisitors += aprVal;
-                totalMarVisitors += marVal;
-
-                const change = calculateChange(aprVal, marVal);
-                trafficTableHTML += `
-                    <tr>
-                        <td>${source}</td>
-                        <td class="text-right">${formatNumber(aprVal)}</td>
-                        <td class="text-right">${formatNumber(marVal)}</td>
-                        <td class="text-right ${change.class}">${formatNumber(change.absolute)}</td>
-                        <td class="text-right ${change.class}">${change.percentage} ${change.arrow}</td>
-                    </tr>`;
-            }
+            trafficSourceComparisonLabels.push(source);
+            trafficSourceDataMay.push(trafficData.may[source] || 0);
+            trafficSourceDataApr.push(trafficData.apr[source] || 0);
         });
-        
-        const totalChange = calculateChange(totalAprVisitors, totalMarVisitors);
-        trafficTableHTML += `
-            <tr class="font-bold">
-                <td>合計 (表内集計)</td>
-                <td class="text-right">${formatNumber(totalAprVisitors)}</td>
-                <td class="text-right">${formatNumber(totalMarVisitors)}</td>
-                <td class="text-right ${totalChange.class}">${formatNumber(totalChange.absolute)}</td>
-                <td class="text-right ${totalChange.class}">${totalChange.percentage} ${totalChange.arrow}</td>
-            </tr>
-        </tbody></table>`;
-        trafficTableContainer.innerHTML += trafficTableHTML; // Append to existing title
-        
+
         const defaultChartOptions = {
             responsive: true, maintainAspectRatio: false,
             scales: {
@@ -616,65 +651,208 @@
                 legend: { labels: { color: '#1A535C', font: { family: "'Inter', 'Noto Sans JP', sans-serif" }}},
                 tooltip: {
                     backgroundColor: 'rgba(26, 83, 92, 0.9)', titleFont: { family: "'Inter', 'Noto Sans JP', sans-serif", weight: 'bold', size: 14 }, bodyFont: { family: "'Inter', 'Noto Sans JP', sans-serif", size: 12 },
-                    callbacks: { label: (context) => `${context.dataset.label || ''}: ${formatNumber(context.parsed.y)}` }
+                    callbacks: { 
+                        label: (context) => `${context.dataset.label || ''}: ${formatNumber(context.parsed.y)}`,
+                        footer: (tooltipItems) => {
+                            const mayItem = tooltipItems.find(item => item.dataset.label.includes('5月'));
+                            const aprItem = tooltipItems.find(item => item.dataset.label.includes('4月'));
+                            if (mayItem && aprItem) {
+                                const mayValue = mayItem.parsed.y;
+                                const aprValue = aprItem.parsed.y;
+                                const change = calculateChange(mayValue, aprValue);
+                                if (change.absolute === 'N/A') return '';
+                                return `前月比: ${change.absolute > 0 ? '+' : ''}${formatNumber(change.absolute)} (${change.percentage})`;
+                            }
+                            return '';
+                        }
+                    }
                 }
             }
         };
 
-        new Chart(document.getElementById('trafficSourceChart'), {
+        new Chart(document.getElementById('trafficSourceComparisonChart'), {
             type: 'bar',
-            data: { labels: trafficChartLabels, datasets: [{ label: '訪問者数 (2025年4月)', data: trafficChartDataApr, backgroundColor: '#45B7D1', borderColor: '#1A535C', borderWidth: 1 }] },
+            data: { 
+                labels: trafficSourceComparisonLabels, 
+                datasets: [
+                    {
+                        label: '訪問者数 (5月)',
+                        data: trafficSourceDataMay,
+                        backgroundColor: '#4ECDC4', // Teal
+                        borderColor: '#1A535C',
+                        borderWidth: 1
+                    },
+                    {
+                        label: '訪問者数 (4月)',
+                        data: trafficSourceDataApr,
+                        backgroundColor: '#a0d2db', // Lighter Teal
+                        borderColor: '#1A535C',
+                        borderWidth: 1
+                    }
+                ]
+             }, 
             options: defaultChartOptions
         });
 
-        // --- Populate Product KPI Table ---
-        const productTableContainer = document.getElementById('productKpiTableContainer');
-        let productTableHTML = `
-            <table>
-                <thead>
-                    <tr>
-                        <th>商品名 (コード)</th>
-                        <th class="text-right">売上 (4月)</th>
-                        <th class="text-right">売上 (3月)</th>
-                        <th class="text-right">売上増減率</th>
-                        <th class="text-right">訪問者 (4月)</th>
-                        <th class="text-right">訪問者 (3月)</th>
-                        <th class="text-right">購買率 (4月)</th>
-                        <th class="text-right">購買率 (3月)</th>
-                        <th class="text-right">お気に入り (4月)</th>
-                        <th class="text-right">お気に入り (3月)</th>
-                        <th class="text-right">カート投入 (4月)</th>
-                        <th class="text-right">カート投入 (3月)</th>
-                    </tr>
-                </thead>
-                <tbody>`;
+        // --- Prepare Product Chart Data ---
+        const productAprMap = new Map(productKpiDataApr.map(p => [p.code, p]));
+        const productChartLabels = [];
+        const productSalesDataMay = [], productSalesDataApr = [];
+        const productVisitorsDataMay = [], productVisitorsDataApr = [];
+        const productCvDataMay = [], productCvDataApr = [];
+        
+        const sortedMayProductsForChart = [...productKpiDataMay].sort((a,b) => b.sales - a.sales);
 
-        productKpiData.forEach(p => {
-            const salesChange = calculateChange(p.aprSales, p.marSales);
-            const visitorsChange = calculateChange(p.aprVisitors, p.marVisitors);
-            // CV change is in pp, so absolute change is more relevant for display here
-            const cvChangeVal = p.aprCv - p.marCv;
-            const cvChangeClass = cvChangeVal > 0 ? 'positive-change' : (cvChangeVal < 0 ? 'negative-change' : 'neutral-change');
-
-            productTableHTML += `
-                <tr>
-                    <td>${p.name} <span class="text-muted">(${p.code})</span></td>
-                    <td class="text-right">${formatCurrency(p.aprSales)}</td>
-                    <td class="text-right">${formatCurrency(p.marSales)}</td>
-                    <td class="text-right ${salesChange.class}">${salesChange.percentage} ${salesChange.arrow}</td>
-                    <td class="text-right">${formatNumber(p.aprVisitors)}</td>
-                    <td class="text-right">${formatNumber(p.marVisitors)}</td>
-                    <td class="text-right">${formatPercentage(p.aprCv)}</td>
-                    <td class="text-right">${formatPercentage(p.marCv)}</td>
-                    <td class="text-right">${formatNumber(p.aprFav)}</td>
-                    <td class="text-right">${formatNumber(p.marFav)}</td>
-                    <td class="text-right">${formatNumber(p.aprCart)}</td>
-                    <td class="text-right">${formatNumber(p.marCart)}</td>
-                </tr>`;
+        sortedMayProductsForChart.slice(0, 6).forEach(pMay => { // Display top 6 products for chart clarity
+            const pApr = productAprMap.get(pMay.code) || { sales: 0, visitors: 0, cv: 0 };
+            productChartLabels.push(pMay.name);
+            productSalesDataMay.push(pMay.sales);
+            productSalesDataApr.push(pApr.sales);
+            productVisitorsDataMay.push(pMay.visitors);
+            productVisitorsDataApr.push(pApr.visitors);
+            productCvDataMay.push(pMay.cv);
+            productCvDataApr.push(pApr.cv);
         });
-        productTableHTML += `</tbody></table>`;
-        productTableContainer.innerHTML += productTableHTML; // Append to existing title
 
+        const productChartOptions = (unit) => {
+            let options = JSON.parse(JSON.stringify(defaultChartOptions));
+            options.plugins.tooltip.callbacks.label = (context) => {
+                let label = context.dataset.label || '';
+                if (label) { label += ': '; }
+                let value = context.parsed.y;
+                if (unit === '円') label += formatCurrency(value);
+                else if (unit === '%') label += formatPercentage(value);
+                else label += formatNumber(value);
+                return label;
+            };
+            if(unit === '%'){
+                options.scales.y.ticks.callback = function(value) { return value + "%" };
+            }
+             if(unit === '円'){
+                options.scales.y.ticks.callback = function(value) { return (value/1000) + 'k' };
+            }
+            return options;
+        };
+
+        new Chart(document.getElementById('productSalesChart'), {
+            type: 'bar',
+            data: {
+                labels: productChartLabels,
+                datasets: [
+                    { label: '売上 (5月)', data: productSalesDataMay, backgroundColor: '#FF6B6B' },
+                    { label: '売上 (4月)', data: productSalesDataApr, backgroundColor: '#fca5a5' }
+                ]
+            },
+            options: productChartOptions('円')
+        });
+        
+        new Chart(document.getElementById('productVisitorsChart'), {
+            type: 'bar',
+            data: {
+                labels: productChartLabels,
+                datasets: [
+                    { label: '訪問者数 (5月)', data: productVisitorsDataMay, backgroundColor: '#4ECDC4' },
+                    { label: '訪問者数 (4月)', data: productVisitorsDataApr, backgroundColor: '#a0d2db' }
+                ]
+            },
+            options: productChartOptions('人')
+        });
+
+        new Chart(document.getElementById('productCvChart'), {
+            type: 'bar',
+            data: {
+                labels: productChartLabels,
+                datasets: [
+                    { label: '購買率 (5月)', data: productCvDataMay, backgroundColor: '#45B7D1' },
+                    { label: '購買率 (4月)', data: productCvDataApr, backgroundColor: '#a5d8e4' }
+                ]
+            },
+            options: productChartOptions('%')
+        });
+        
+        // --- Create Product Sales Ranking Chart ---
+        const productRankingLabels = [];
+        const productRankingSalesMay = [];
+        const productRankingSalesApr = [];
+
+        productKpiDataMay.sort((a, b) => b.sales - a.sales).slice(0, 5).reverse().forEach(pMay => { // Reverse for correct order in horizontal bar
+            const pApr = productAprMap.get(pMay.code) || { sales: 0 };
+            productRankingLabels.push(pMay.name);
+            productRankingSalesMay.push(pMay.sales);
+            productRankingSalesApr.push(pApr.sales);
+        });
+
+        new Chart(document.getElementById('productSalesRankingChart'), {
+            type: 'bar',
+            data: {
+                labels: productRankingLabels,
+                datasets: [
+                    {
+                        label: '売上 (5月)',
+                        data: productRankingSalesMay,
+                        backgroundColor: '#FF6B6B',
+                        borderColor: '#FF6B6B',
+                        borderWidth: 1
+                    },
+                    {
+                        label: '売上 (4月)',
+                        data: productRankingSalesApr,
+                        backgroundColor: '#fca5a5',
+                        borderColor: '#fca5a5',
+                        borderWidth: 1
+                    }
+                ]
+            },
+            options: {
+                indexAxis: 'y', // Make it horizontal
+                responsive: true,
+                maintainAspectRatio: false,
+                scales: {
+                    x: {
+                        beginAtZero: true,
+                        ticks: {
+                            callback: function(value) { return (value / 1000) + 'k'; } // Format as '100k'
+                        }
+                    }
+                },
+                plugins: {
+                    legend: { position: 'top' },
+                    title: { display: false },
+                    tooltip: {
+                         callbacks: { label: (context) => `${context.dataset.label}: ${formatCurrency(context.parsed.x)}` }
+                    }
+                }
+            }
+        });
+
+
+        // --- Update Text Content for Product Analysis (Chapter 2 & 3) ---
+        const productRank1 = productKpiDataMay.sort((a,b) => b.sales - a.sales)[0];
+        const productRank2 = productKpiDataMay.sort((a,b) => b.sales - a.sales)[1];
+        const productRank3 = productKpiDataMay.sort((a,b) => b.sales - a.sales)[2];
+        const productRank4 = productKpiDataMay.sort((a,b) => b.sales - a.sales)[3];
+
+        if(document.getElementById('productRankAnalysis')){
+            document.getElementById('productRankAnalysis').textContent = `5月は「${productRank1.name}」が引き続きトップを維持し、売上も前月比で増加しました。特に「${productKpiDataMay.find(p=>p.code === '001010008-1')?.name || ''}」は4月に引き続き好調で、売上を大きく伸ばしています。5月のセール施策がこれらの主力商品に良い影響を与えたと考えられます。`;
+        }
+
+        const growthProductsList = document.getElementById('growthProductsList');
+        if (growthProductsList) {
+            growthProductsList.innerHTML = `
+                <li><strong>${productKpiDataMay.find(p=>p.code === '001010008')?.name || ''} (${productKpiDataMay.find(p=>p.code === '001010008')?.code || ''}):</strong> 売上 ${formatPercentage(calculateChange(productKpiDataMay.find(p=>p.code === '001010008').sales, productAprMap.get('001010008')?.sales || 0).percentageRaw)}増。訪問者数も増加し、購買率が16.7%→20.3%と大幅に向上。主力商品としての強さを見せました。</li>
+                <li><strong>${productKpiDataMay.find(p=>p.code === '001010008-1')?.name || ''} (${productKpiDataMay.find(p=>p.code === '001010008-1')?.code || ''}):</strong> 売上 ${formatPercentage(calculateChange(productKpiDataMay.find(p=>p.code === '001010008-1').sales, productAprMap.get('001010008-1')?.sales || 0).percentageRaw)}増。訪問者数も倍増し、高い購買率を維持。セット商品の訴求が成功しているようです。</li>
+                <li><strong>お試し 化粧水 CICA 保湿ミスト スプレータイプ 30mL (001010011):</strong> 4月売上実績なしから、5月に${formatCurrency(14850)}を記録。トライアル商品からの新規顧客獲得の可能性。</li>`;
+        }
+        const improvementProductsList = document.getElementById('improvementProductsList');
+        if(improvementProductsList){
+            improvementProductsList.innerHTML = `
+                <li><strong>${productKpiDataMay.find(p=>p.code === '001010004')?.name || ''} (${productKpiDataMay.find(p=>p.code === '001010004')?.code || ''}):</strong> 売上 ${formatPercentage(calculateChange(productKpiDataMay.find(p=>p.code === '001010004').sales, productAprMap.get('001010004')?.sales || 0).percentageRaw)}減。訪問者数も減少し、購買率も7.0%→4.8%と低下。引き続きテコ入れが必要。</li>
+                <li><strong>${productKpiDataMay.find(p=>p.code === '001010001')?.name || ''} (${productKpiDataMay.find(p=>p.code === '001010001')?.code || ''}):</strong> 売上 ${formatPercentage(calculateChange(productKpiDataMay.find(p=>p.code === '001010001').sales, productAprMap.get('001010001')?.sales || 0).percentageRaw)}減。訪問者数、購買率ともに低下傾向。</li>`;
+        }
+
+        if(document.getElementById('productKpiInsights')){
+            document.getElementById('productKpiInsights').innerHTML = `5月は全体的に売上が好調だったものの、商品ごとのパフォーマンスには濃淡が見られます。「クレンジングジェル500g詰め替え用」や「ボトルセット」は訪問者増と高い購買率で売上を牽引しました。特に詰め替え用は購買率が20%を超えるなど、顧客の購入意欲が非常に高まっています。一方で、「化粧水CICAミスト」は4月に続き苦戦しており、訪問者数・購買率ともに改善が必要です。お試しサイズの商品群が売上を計上し始めている点は、新規顧客獲得の入口として機能し始めた可能性を示唆しており、今後の育成が期待されます。`;
+        }
     </script>
 </body>
 </html>
